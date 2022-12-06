@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <input/>
+    <input/>
+    <input/>
+    <input/>
+    <input/>
+    <script>
+      var elements = document.getElementsByTagName('input');
+      var n = elements.length;
+
+      for(var i = 0; i < n; i++)
+      {
+        let j = i; // elint: ne smeju se koristiti promenljive iz petlje 
+        // u funkcijama jer su asinhrone pa se te vrednosti mogu menjati
+        // uvede se nova promenljiva koja ce biti kopija vrednosti 
+        // promelnljive u petlji
+        elements[i].onclick = function() // dok je skroz okej koristiti je za indeksiranje niza
+        // tome i sluze petlje, zar ne Ket? :)
+        {
+            console.log("This is element #" + j); // i ona se koristi kao brojac
+        };
+      }
+  </script>
+  </body>
+</html>
