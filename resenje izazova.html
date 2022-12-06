@@ -16,12 +16,12 @@
 
       for(var i = 0; i < n; i++)
       {
-        let j = i; // elint: ne smeju se koristiti promenljive iz petlje 
+        let j = i; 
+        // elint: ne smeju se koristiti promenljive iz petlje 
         // u funkcijama jer su asinhrone pa se te vrednosti mogu menjati
         // uvede se nova promenljiva koja ce biti kopija vrednosti 
         // promelnljive u petlji
-        elements[i].onclick = function() // dok je skroz okej koristiti je za indeksiranje niza
-        // tome i sluze petlje, zar ne Ket? :)
+        elements[i].onclick = function() // dok je skroz okej koristiti je za indeksiranje niza tome i sluze petlje
         {
             console.log("This is element #" + j); // i ona se koristi kao brojac
         };
